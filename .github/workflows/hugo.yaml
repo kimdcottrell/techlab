@@ -27,6 +27,11 @@ defaults:
   run:
     shell: bash
 
+
+# set an environment variable for use in the jobs pointing to my blog
+env:
+  blog_url: https://www.kimdcottrell.com
+
 jobs:
   # Build job
   build:
