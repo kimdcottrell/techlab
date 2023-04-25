@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  project:
+    build:
+      context: ./cicd/containers
+      target: dev
+    environment:
+      UMASK: 0002
+    volumes:
+      - ./src:/src
+    ports:
+      - "1313:1313"
