@@ -43,13 +43,11 @@ jobs:
         working-directory: ./src
         run: sudo snap install dart-sass-embedded
       - name: Checkout
-        working-directory: ./src
         uses: actions/checkout@v3
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Setup Pages
-        working-directory: ./src
         id: pages
         uses: actions/configure-pages@v3
       - name: Install Node.js dependencies
