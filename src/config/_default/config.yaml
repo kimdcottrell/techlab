@@ -18,19 +18,20 @@ params:
   TocOpen: false
   description: "Where kimdcottrell semi-incoherently rambles about this cool thing she discovered at 5:30am."
   keywords: [Blog, Portfolio, Tech, DevOps, Resume]
-  profileMode:
-    buttons:
-      - name: Resume
-        url: /resume.pdf
-      - name: Blog
-        url: /posts
-      - name: YouTube
-        url: https://www.youtube.com/@KimsTechLab
-    enabled: true # needs to be explicitly set
-    subtitle: "Hire me, read my stuff, or watch my videos."
-    title: Tech is neat.
+  homeInfoParams:
+    Title: "Tech is neat."
+    Content: >
+      Hi there! I'm Kim, a tech enthusiast. 👩‍💻
+      
+      - I've been a professional in all aspects of web development and deployment for over 10 years, from design to databases to local development to remote environments. 
+      
+      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops positions.
+      
+      - Sample code is available on GitHub.
   showToc: true
   socialIcons:
+    - name: youtube
+      url: https://www.youtube.com/@KimsTechLab
     - name: linkedin
       url: https://www.linkedin.com/in/kimdcottrell/
     - name: github
