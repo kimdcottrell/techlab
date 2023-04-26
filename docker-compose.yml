@@ -4,9 +4,8 @@ services:
     build:
       context: ./cicd/containers
       target: dev
-    environment:
-      UMASK: 0002
     volumes:
-      - ./src:/src
+    - ./src:/app/src
+    - ./.git:/app/.git
     ports:
       - "1313:1313"

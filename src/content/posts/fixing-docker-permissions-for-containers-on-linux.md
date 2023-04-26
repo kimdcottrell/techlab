@@ -2,6 +2,7 @@
 title: "Fixing Docker permissions for containers on Linux"
 date: 2023-04-25T14:34:18Z
 draft: false
+tags: ['docker', 'linux', 'devops']
 ---
 
 # What does this solve?
@@ -48,7 +49,7 @@ services:
       - "1313:1313" # the end goal should allow us to use http://localhost:1313 to access our hugo dev site
 ```
 
-# Let's fix it!
+# Fixing the issue with maximum potability across operating systems
 
 There are many ways to fix this, but this article will specifically go over the most portable one. I wanted a fix that would not prevent someone on a different machine from being able to spin up my Dockerfile. 
 

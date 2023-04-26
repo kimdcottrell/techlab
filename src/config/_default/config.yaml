@@ -1,0 +1,40 @@
+baseURL: 'http://0.0.0.0:1313'
+enableGitInfo: true
+enableRobotsTXT: true
+languageCode: en-us
+menu:
+  main:
+    - name: Blog
+      pageRef: /posts
+      weight: 20
+    - name: Resume
+      url: /resume.pdf
+      weight: 10
+    - name: YouTube
+      url: https://www.youtube.com/@KimsTechLab
+      weight: 30
+params:
+  DateFormat: "January 2, 2006"
+  TocOpen: false
+  description: "Where kimdcottrell semi-incoherently rambles about this cool thing she discovered at 5:30am."
+  keywords: [Blog, Portfolio, Tech, DevOps, Resume]
+  profileMode:
+    buttons:
+      - name: Resume
+        url: /resume.pdf
+      - name: Blog
+        url: /posts
+      - name: YouTube
+        url: https://www.youtube.com/@KimsTechLab
+    enabled: true # needs to be explicitly set
+    subtitle: "Hire me, read my stuff, or watch my videos."
+    title: Tech is neat.
+  showToc: true
+  socialIcons:
+    - name: linkedin
+      url: https://www.linkedin.com/in/kimdcottrell/
+    - name: github
+      url: https://github.com/kimdcottrell/
+relativeURLs: true
+theme: PaperMod
+title: Kim's Tech Lab
