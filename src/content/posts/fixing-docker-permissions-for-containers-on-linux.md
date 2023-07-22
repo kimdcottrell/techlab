@@ -2,7 +2,7 @@
 title: "Fixing Docker permissions for containers on Linux"
 date: 2023-04-25T14:34:18Z
 draft: false
-tags: ['docker', 'linux', 'devops']
+tags: ['docker', 'linux', 'devops', 'container']
 ---
 
 # What does this solve?
