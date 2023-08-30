@@ -3,6 +3,7 @@ title: "How to use Traefik Proxy without exposing the Docker socket (HTTP Filter
 date: 2023-07-21T12:51:11Z
 draft: false
 tags: ['docker', 'linux', 'devops', 'traefik', 'reverse proxy', 'security', 'localdev', 'local development', 'container']
+summary: "Opening up the Docker socket to a container results in the possibility that someone can utilize that container to break into the host machine. This is an example showing how to prevent such a jailbreak - it uses a localdev stack, though the solution for the socket used can also be used in a production environment."
 ---
 
 # What problem does this solve? 

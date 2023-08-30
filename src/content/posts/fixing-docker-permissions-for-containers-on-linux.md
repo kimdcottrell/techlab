@@ -3,6 +3,7 @@ title: "Fixing Docker permissions for containers on Linux"
 date: 2023-04-25T14:34:18Z
 draft: false
 tags: ['docker', 'linux', 'devops', 'container']
+summary: "This fixes issues with Docker container volumes on Linux. If this fix is not put in place, files and directories created and edited within the container may show up on the host machine with unwritable/unreadable permissions. OSX and Windows users do not need to worry about this, since Docker runs ontop a VM in those operating systems and the permissions are handled by Docker and that VM."
 ---
 
 # What does this solve?
