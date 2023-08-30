@@ -10,28 +10,29 @@ menu:
     - name: Resume
       url: /resume.pdf
       weight: 10
-    - name: YouTube
-      url: https://www.youtube.com/@KimsTechLab
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/kimdcottrell
       weight: 30
+    - name: Github
+      url: https://github.com/kimdcottrell/
+      weight: 40
 params:
   DateFormat: "January 2, 2006"
   TocOpen: false
-  description: "Where kimdcottrell semi-incoherently rambles about this cool thing she discovered at 5:30am."
-  keywords: [Blog, Portfolio, Tech, DevOps, Resume]
+  description: "The writings of Kim D. Cottrell, a senior full-stack engineer and coffee lover."
+  keywords: ["Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
   homeInfoParams:
     Title: "Tech is neat."
     Content: >
-      Hi there! I'm Kim, a tech enthusiast. 👩‍💻
+      Hi there! I'm Kim, a senior full-stack engineer and coffee enthusiast. 👩‍💻
       
       - I've been a professional in all aspects of web development and deployment for over 10 years, from design to databases to local development to remote environments. 
       
-      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops positions.
+      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops/full-stack positions.
       
       - Sample code is available on GitHub.
   showToc: true
   socialIcons:
-    - name: youtube
-      url: https://www.youtube.com/@KimsTechLab
     - name: linkedin
       url: https://www.linkedin.com/in/kimdcottrell/
     - name: github
