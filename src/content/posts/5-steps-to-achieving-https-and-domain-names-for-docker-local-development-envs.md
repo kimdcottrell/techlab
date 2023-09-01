@@ -1,6 +1,6 @@
 ---
 title: "5 simple steps to achieving https and domain names for Docker localdev environments"
-date: 2023-07-30T21:26:05Z
+date: 2023-08-30T21:26:05Z
 draft: false
 tags: ['docker', 'linux', 'devops', 'container', 'traefik', 'reverse proxy', 'https', 'local development', 'localdev', 'containerization', '443', 'domain name']
 summary: "Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to easily achieve the next step up: https-enabled domain names for your local environments."
