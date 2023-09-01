@@ -1,14 +1,14 @@
 ---
-title: "5 Steps to achieving https and domain names for Docker localdev environments"
+title: "5 simple steps to achieving https and domain names for Docker localdev environments"
 date: 2023-07-30T21:26:05Z
 draft: false
 tags: ['docker', 'linux', 'devops', 'container', 'traefik', 'reverse proxy', 'https', 'local development', 'localdev', 'containerization', '443', 'domain name']
-summary: ""
+summary: "Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to easily achieve the next step up: https-enabled domain names for your local environments."
 ---
 
 # HTTPs and domain names for local development environments
 
-Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to most easily do it. 
+Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to easily achieve the next step up. 
 
 The project that inspired this article is available here: https://github.com/kimdcottrell/localdev-proxy 
 
@@ -16,9 +16,9 @@ The project that inspired this article is available here: https://github.com/kim
 
 Let's take a step back. If you're just writing a file using HTML, CSS, and JS, why wouldn't you just load that file up in your browser using the `file://` protocol and doing all your development that way?
 
-Put simply: Unless you're making a webpage simply for yourself on your local machine, your endgame is to make a website. A website is served either via `http://` or `https://`, and different Javscript functionalities in your browser, and in your file, will be accessible only when accessing your webpage via those `http*://` protocols. 
+Put simply: Unless you're making a webpage simply for yourself on your local machine, your endgame is to serve your code to the public via a website. A website is served either via `http://` or `https://`, and different Javscript functionalities in your browser, and in your file, will be accessible only when accessing your webpage via those `http*://` protocols. 
 
-Using docker and a webserver container is a step above that. You'll at least get your pages served via the `http://` protocol. However, if you're in the professional webdev space, you'll _quickly_ discover Docker's `http://1.2.3.4:8080` syntax is just not good enough. A number of vendor API's require that you're accessing them under at least a domain name, if not a domain name served via https, aka on port 443. And don't even get me started on how your browser will react if you ever dare to typo `https://` before a local domain name that is only served on port 80...
+Using docker and a webserver container is a step above that. You'll at least get your pages served via the `http://` protocol. However, if you're in the professional webdev space, you'll _quickly_ discover Docker's `http://1.2.3.4:8080` syntax is just not good enough. A number of vendor API's require that you're accessing them under at least a domain name, if not a domain name served via https, aka on port 443. And don't even get me started on how your browser will react if you [ever dare to typo](https://stackoverflow.com/questions/73875589/disable-website-redirection-to-https-on-chrome) `https://` before a local domain name that is only served on port 80...
 
 If you plan on using Docker for local development on websites that interact with things like payment processors or ecommerce vendors, you _require_ a reverse proxy. Local development for websites that interact with payment processors or ecommerce vendors commonly require a domain name and https. Using a reverse proxy will make these things possible:
 
@@ -31,7 +31,7 @@ Let's solve for one problem at a time, in 5 simple steps.
 
 All the code from this article stems from the development of this repo: https://github.com/kimdcottrell/localdev-proxy
 
-We'll be using [Traefik Proxy](https://doc.traefik.io/traefik/) for this. There are others, such as [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy), though I personally prefer Traefik for the inherent Englishness it brings to the table as well as how it operationally allows you to stay within the bounds of yaml that you're used to after working with Docker. 
+We'll be using [Traefik Proxy](https://doc.traefik.io/traefik/) for this. There are others, such as [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy), though I personally prefer Traefik for the inherent Englishness it brings to the table as well as how it stays within the bounds of yaml that I'm used to after working with Docker so much. 
 
 ## Step 1: Setting up the Traefik container stack for port 80 connections
 
@@ -154,7 +154,7 @@ Going back to the directory where your traefik container lives, you'll want to c
 └── traefik.yml
 ```
 
-Certifications for https are... Complicated. Luckily, instead of praying to the `openssl` gods that you've nailed all the syntax requirements, [mkcert](https://github.com/FiloSottile/mkcert) exists. And for localdev purposes, it is the bees knees. 
+Certifications for https are... Complicated. Luckily, instead of praying to the [openssl gods](https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl#41366949) that you've nailed all the syntax requirements, [mkcert](https://github.com/FiloSottile/mkcert) exists. And for localdev purposes, it is the bees knees. 
 
 Simply go to that repo and follow the install directions for your operating system. Then, run the following:
 
@@ -242,9 +242,9 @@ services:
 
 ## Step 5: Restart your application and test
 
-Now after a quick `docker compose down && docker compose up`, you should be able to visit `https://webserver.local.dev` in your browser.
+Now after a quick `docker compose down && docker compose up`, you should be able to visit `https://webserver.local.dev` in your browser. If you've made it this far, I'm genuinely proud of you. This has been a LOT of words.
 
-Huzzah, all should be working. :) 
+![I have said too much](/5-steps-for-https-and-domain-names-on-local-dev-environments.gif 'I have said too much')
 
 # Minor notes
 
