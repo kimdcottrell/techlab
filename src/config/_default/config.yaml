@@ -27,13 +27,13 @@ params:
   homeInfoParams:
     Title: "Tech is neat."
     Content: >
-      Hi there! I'm Kim, a senior full-stack engineer and coffee enthusiast. 👩‍💻
+      Hi there! I'm Kim D. Cottrell, a senior full-stack engineer and coffee enthusiast. 👩‍💻
       
       - I've been a professional in all aspects of web development and deployment for over 10 years, from design to databases to local development to remote environments. 
-      
-      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops/full-stack/platform/software engineer positions.
-      
-      - Sample code is available on GitHub.
+
+      - I'm [available for hire](/resume.pdf) and looking for full-time, remote positions for devops, full-stack, platform, software engineer roles.
+
+      - Sample code is available on GitHub. I'm also working on a personal project called [Carrier Ami](https://carrierami.com), a web app designed to better help you keep track of the news.
   showToc: true
   socialIcons:
     - name: linkedin
@@ -42,4 +42,5 @@ params:
       url: https://github.com/kimdcottrell/
 relativeURLs: true
 theme: PaperMod
-title: Kim's Tech Lab | kimdcottrell.com
+title: Kim's Tech Lab
+headTitle: Kim's Tech Lab | kimdcottrell.com
