@@ -20,7 +20,7 @@ params:
   DateFormat: "January 2, 2006"
   TocOpen: false
   description: "The writings of Kim D. Cottrell, a senior full-stack engineer and coffee lover."
-  keywords: ["Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
+  keywords: ["Kim's Tech Blog", "kimdcottrell", "Kim D. Cottrell", "Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
   homeInfoParams:
     Title: "Tech is neat."
     Content: >
@@ -39,4 +39,4 @@ params:
       url: https://github.com/kimdcottrell/
 relativeURLs: true
 theme: PaperMod
-title: Kim's Tech Lab
+title: Kim's Tech Lab | kimdcottrell.com
