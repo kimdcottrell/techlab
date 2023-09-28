@@ -16,6 +16,9 @@ menu:
     - name: Github
       url: https://github.com/kimdcottrell/
       weight: 40
+    - name: Carrier Ami
+      url: https://carrierami.com
+      weight: 50
 params:
   DateFormat: "January 2, 2006"
   TocOpen: false
@@ -28,7 +31,7 @@ params:
       
       - I've been a professional in all aspects of web development and deployment for over 10 years, from design to databases to local development to remote environments. 
       
-      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops/full-stack positions.
+      - I'm [available for hire](/resume.pdf) and looking for full-time, remote, devops/full-stack/platform/software engineer positions.
       
       - Sample code is available on GitHub.
   showToc: true
