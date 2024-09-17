@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM golang:1.20-alpine3.16 AS base
+FROM golang:1.23.1-alpine3.16 AS base
 
 RUN apk --no-cache add git bash bash-completion tzdata make hugo \
     && find /tmp -mindepth 1 -maxdepth 1 | xargs rm -rf
