@@ -2,9 +2,9 @@ services:
   project:
     build:
       context: ./cicd/containers
-      target: dev
     volumes:
-    - ./src:/app/src
-    - ./.git:/app/.git
+      - .:/app
+    working_dir: /app/src
+    user: dev
     ports:
       - "1313:1313"

@@ -1,7 +1,6 @@
-baseURL: 'http://0.0.0.0:1313'
-enableGitInfo: true
-enableRobotsTXT: true
-languageCode: en-us
+theme: "PaperMod"
+title: kimdcottrell.com
+
 menu:
   main:
     - name: Blog
@@ -16,27 +15,49 @@ menu:
     - name: Github
       url: https://github.com/kimdcottrell/
       weight: 40
-params:
-  DateFormat: "January 2, 2006"
-  TocOpen: false
-  description: "The writings of Kim D. Cottrell, a senior software developer and mid-level devops engineer."
-  keywords: ["Kim's Tech Blog", "kimdcottrell", "Kim D. Cottrell", "Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
-  homeInfoParams:
-    Title: "Tech is neat."
-    Content: >
-      Hi there! I'm Kim D. Cottrel.
-      
-      - Senior software engineer. Mid-level devops engineer. Coffee enthusiast. Dog mom. 👩‍💻
-      
-      - I'm [available for hire](/resume.pdf) and looking for full-time, remote positions for devops, full-stack, platform, site-relability, and software engineer roles.
 
-  showToc: true
-  socialIcons:
-    - name: linkedin
-      url: https://www.linkedin.com/in/kimdcottrell/
-    - name: github
-      url: https://github.com/kimdcottrell/
-relativeURLs: true
-theme: PaperMod
-title: Kim's Tech Lab
-headTitle: Kim's Tech Lab | kimdcottrell.com
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    description: "The writings of Kim D. Cottrell, a senior software developer and mid-level devops engineer."
+    keywords: ["Kim's Tech Blog", "kimdcottrell", "Kim D. Cottrell", "Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
+    author: kimdcottrell
+    # author: ["Me", "You"] # multiple authors
+    DateFormat: "January 2, 2006"
+    defaultTheme: auto # dark, light
+    disableThemeToggle: false
+
+    socialIcons:
+      - name: github
+        title: See my active projects
+        url: "https://github.com/kimdcottrell"
+      - name: BlueSky
+        title: Follow me on BlueSky
+        url: "https://bsky.app/profile/kimdcottrell.com"
+      - name: X
+        title: Follow me on Twitter
+        url: "https://x.com/kimdcottrell"
+      - name: LinkedIn
+        title: Follow me on LinkedIn
+        url: "https://www.linkedin.com/in/kimdcottrell"
+      - name: Discord
+        title: Chat with friends and I about something on Discord
+        url: "https://discord.gg/cvDh7cRea2"
+      - name: YouTube
+        title: Watch me be a nerd
+        url: "https://www.youtube.com/channel/UCx9pLB9CE-ZHuV_YFcXKV2g"
+
+    homeInfoParams:
+      Title: "Tech is neat."
+      Content: >
+        Hi there! I'm Kim D. Cottrel.
+        
+        - Senior software engineer. Mid-level devops engineer. Coffee enthusiast. Dog mom. 👩‍💻
+        
+        - I'm [available for hire](/resume.pdf) and looking for full-time, remote positions for devops, full-stack, platform, site-relability, and software engineer roles.
+  
+  
+
+
