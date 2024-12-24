@@ -1,6 +1,7 @@
 ---
 title: "5 simple steps to achieving https and domain names for Docker localdev environments"
 date: 2023-08-30T21:26:05Z
+lastmod: 2024-12-24T13:50:31Z
 draft: false
 tags: ['docker', 'linux', 'devops', 'container', 'traefik', 'reverse proxy', 'https', 'local development', 'localdev', 'containerization', '443', 'domain name']
 summary: "Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to easily achieve the next step up: https-enabled domain names for your local environments."
@@ -11,6 +12,11 @@ summary: "Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine fo
 Sometimes, Docker's usual `http://1.2.3.4:8080` syntax is just fine for localdev. Othertimes, it's not. Let's explore when you'll need to change things up, why you need to do so, and how to easily achieve the next step up. 
 
 The project that inspired this article is available here: https://github.com/kimdcottrell/localdev-proxy 
+
+# Updates to this article
+
+- Updating article code so the traefik image pulls from 3.2 instead of 2.10
+- The reference repo has been updated to use `traefik:v3.2`
 
 # Why and when you need to go down the `https://mysite.local.dev` route
 
@@ -38,11 +44,9 @@ We'll be using [Traefik Proxy](https://doc.traefik.io/traefik/) for this. There 
 Within a separate, new `docker-compose.yml` file outside of your application's, you'll need to grab the traefik container and specify an external network within Docker's pervue at a minimum.
 
 ```yaml
-version: "3.8"
-
 services:
   traefik:
-    image: traefik:v2.10
+    image: traefik:v3.2
     restart: unless-stopped
     ports:
       - "80:80"
@@ -161,7 +165,7 @@ Simply go to that repo and follow the install directions for your operating syst
 ```bash
 cd certs
 mkcert -install
-mkcert -key-file wilcard-local-dev-key.pem -cert-file wilcard-local-dev-cert.pem *.local.dev
+mkcert -key-file wildcard-local-dev-key.pem -cert-file wildcard-local-dev-cert.pem *.local.dev
 ```
 
 On a sucessful run of `mkcert`, you should see the following appear in your traefik's app dir's tree:
@@ -169,8 +173,8 @@ On a sucessful run of `mkcert`, you should see the following appear in your trae
 ```
 .
 ├── certs
-│   ├── wilcard-local-dev-key.pem
-│   └── wilcard-local-dev-cert.pem
+│   ├── wildcard-local-dev-key.pem
+│   └── wildcard-local-dev-cert.pem
 ```
 
 With the certs now created, we need to:
@@ -178,6 +182,9 @@ With the certs now created, we need to:
 1. In the `docker-compose.yml`, mount the dir so traefik's container has those certs available in the filesystem, also include the new ports we want added and traefik's dynamic configuration:
 
 ```yaml
+  traefik:
+    image: traefik:v3.2
+    ...
     ports:
       - "80:80"
       - "443:443"
@@ -192,8 +199,8 @@ With the certs now created, we need to:
 ```
 tls:
   certificates:
-    - certFile: /etc/certs/wilcard-local-dev-cert.pem
-      keyFile: /etc/certs/wilcard-local-dev-key.pem
+    - certFile: /etc/certs/wildcard-local-dev-cert.pem
+      keyFile: /etc/certs/wildcard-local-dev-key.pem
 ```
 
 3. In the `traefik.yml`, tell traefik about how we want traffic served on 443 and about the dynamic config file:

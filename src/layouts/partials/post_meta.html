@@ -1,0 +1,26 @@
+{{- if .PublishDate -}}
+  <span><strong>Published: </strong>{{ .PublishDate | time.Format (default "January 2, 2006" site.Params.DateFormat) }}</span>
+{{- end }}
+
+{{- if .Lastmod -}}
+  <span><strong>Last updated: </strong>{{ .Lastmod | time.Format (default "January 2, 2006" site.Params.DateFormat) }}</span>
+{{- end }}
+
+{{- $scratch := newScratch }}
+    {{- if (.Param "ShowReadingTime") -}}
+        {{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
+    {{- end }}
+
+    {{- if (.Param "ShowWordCount") -}}
+        {{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+    {{- end }}
+
+    {{- if not (.Param "hideAuthor") -}}
+        {{- with (partial "author.html" .) }}
+        {{- $scratch.Add "meta" (slice .) }}
+    {{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}

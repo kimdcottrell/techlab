@@ -1,0 +1,24 @@
+body {
+    font-family: "Nunito Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+.first-entry .entry-header h1, .post-header h1{
+    font-size: 44px;
+}
+
+.entry-header h1,
+.entry-header h2,
+.entry-header h3,
+.post-header h1,
+.post-header h2,
+.post-header h3 {
+    font-family: "Gaegu", serif;
+    font-weight: 400;
+    font-style: normal; 
+} 
+  

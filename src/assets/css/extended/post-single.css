@@ -1,0 +1,29 @@
+.post-content h1 {
+    margin: 40px auto 32px;
+    font-size: 32px;
+}
+
+.post-content h2 {
+    margin: 32px auto 24px;
+    font-size: 27px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+}
+
+.post-content h4 {
+    font-size: 20px;
+}
+
+.post-content h5 {
+    font-size: 18px;
+}
+
+.post-content h6 {
+    font-size: 16px;
+}
+
+.post-meta, .post-meta span, .post-meta time {
+    display: block;
+}

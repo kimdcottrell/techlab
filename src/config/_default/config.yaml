@@ -1,6 +1,12 @@
 theme: "PaperMod"
 title: kimdcottrell.com
 
+# these settings force lastmod to only appear if set in the post.md
+enableGitInfo: false
+frontmatter:
+  lastmod:
+    - lastmod
+
 menu:
   main:
     - name: Blog
@@ -24,6 +30,7 @@ params:
     description: "The writings of Kim D. Cottrell, a senior software developer and mid-level devops engineer."
     keywords: ["Kim's Tech Blog", "kimdcottrell", "Kim D. Cottrell", "Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
     author: kimdcottrell
+    hideAuthor: true
     # author: ["Me", "You"] # multiple authors
     DateFormat: "January 2, 2006"
     defaultTheme: auto # dark, light
@@ -52,7 +59,7 @@ params:
     homeInfoParams:
       Title: "Tech is neat."
       Content: >
-        Hi there! I'm Kim D. Cottrel.
+        Hi there! I'm Kim D. Cottrell.
         
         - Senior software engineer. Mid-level devops engineer. Coffee enthusiast. Dog mom. 👩‍💻
         
