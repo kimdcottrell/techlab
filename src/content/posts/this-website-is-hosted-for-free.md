@@ -2,13 +2,15 @@
 title: "This website is hosted for free. Here's how."
 date: 2024-12-24T17:52:13Z
 draft: false
+images: 
+- this-website-is-hosted-for-free.gif
 tags: ['github', 'devops']
 summary: "I host this website for exactly $0. The domain name and email cost me money, yes, but the hosting? Zero. Zip. Nothing. Such is the magic of Hugo and Github Pages."
 ---
 
 I host this website for exactly $0. The domain name and email cost me money, yes, but the hosting? Zero. Zip. Nothing. 
 
-![Free web hosting???](/free-web-hosting.gif 'Free web hosting???')
+![Free web hosting???](/this-website-is-hosted-for-free.gif 'Free web hosting???')
 
 # How is this possible?
 

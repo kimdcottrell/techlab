@@ -1,6 +1,2 @@
 baseURL: 'https://kimdcottrell.com'
 googleAnalytics: 'G-SNXVXPF0HE'
-
-params:
-    env: production
-
