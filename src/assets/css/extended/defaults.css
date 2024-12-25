@@ -21,4 +21,13 @@ body {
     font-weight: 400;
     font-style: normal; 
 } 
-  
+
+.post-meta, .post-meta span, .post-meta time, .entry-footer span, .archive-meta span {
+    display: block;
+}
+
+.share-buttons{
+    background: none;
+    border: none;
+    margin-top: 56px;
+}

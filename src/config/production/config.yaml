@@ -1,6 +1,4 @@
 baseURL: 'https://kimdcottrell.com'
-enableGitInfo: false
-googleAnalytics: 'G-SNXVXPF0HE'
 
 params:
     env: production

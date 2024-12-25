@@ -23,7 +23,3 @@
 .post-content h6 {
     font-size: 16px;
 }
-
-.post-meta, .post-meta span, .post-meta time, .entry-footer span {
-    display: block;
-}
