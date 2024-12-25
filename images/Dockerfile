@@ -43,7 +43,7 @@ ENV GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 WORKDIR /app/src
 
-ENTRYPOINT ["hugo", "server", "-DEF", "--watch=true", "--bind=0.0.0.0", "--baseURL=http://0.0.0.0:1313"]
+ENTRYPOINT ["hugo", "server", "-DEF", "--watch=true", "--bind=0.0.0.0", "--appendPort=false", "--baseURL=https://techlab.local.dev"]
 
 EXPOSE 1313
 

@@ -8,8 +8,34 @@ services:
       - .:/app
     working_dir: /app/src
     user: dev
-    ports:
-      - "1313:1313"
+    networks:
+      - default
+      - proxy
+    labels:
+      # Explicitly tell Traefik to expose this container
+      - traefik.enable=true
+      # Tell Traefik you are planning a redirection, and to include the needed middleware
+      - traefik.http.middlewares.webserverlocaldev-redirect-web-secure.redirectscheme.scheme=https
+      - traefik.http.routers.webserverlocaldev.middlewares=webserverlocaldev-redirect-web-secure
+      # The domain the service will respond to, and what is in your /etc/hosts
+      - traefik.http.routers.webserverlocaldev-web.rule=Host(`techlab.local.dev`)
+      # Allow request only from the predefined entry point named "web"
+      - traefik.http.routers.webserverlocaldev-web.entrypoints=web # this is working with the port 80 entrypoint in the traefik config (a different docker-compose.yml)
+      # Let's redirect!
+      - traefik.http.routers.webserverlocaldev-web-secure.rule=Host(`techlab.local.dev`)
+      - traefik.http.routers.webserverlocaldev-web-secure.tls=true
+      - traefik.http.routers.webserverlocaldev-web-secure.entrypoints=web-secure
+      # What is essentially in this container's Dockerfile or image's Dockerfile under the `EXPOSE` setting
+      - traefik.http.services.webserverlocaldev-web-secure.loadbalancer.server.port=1313 # this can be anything, but mirror the change back to the Dockerfile via EXPOSE
+
 
 volumes:
   node_modules:
+
+networks:
+  # Creating our own network allows us to connect between containers using their service name.
+  default:
+    driver: bridge
+  # Required to get https to work. Must also be running this: https://github.com/kimdcottrell/localdev-proxy
+  proxy:
+    external: true

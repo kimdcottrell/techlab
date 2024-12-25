@@ -23,9 +23,9 @@ menu:
     - name: Archives
       url: /archives
       weight: 4
-    - name: Contact
-      url: /contact
-      weight: 5
+    # - name: Contact
+    #   url: /contact
+    #   weight: 5
     - name: Github
       url: https://github.com/kimdcottrell/
       weight: 6
