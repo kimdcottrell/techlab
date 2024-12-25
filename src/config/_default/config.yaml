@@ -23,9 +23,12 @@ menu:
     - name: Archives
       url: /archives
       weight: 4
+    - name: Contact
+      url: /contact
+      weight: 5
     - name: Github
       url: https://github.com/kimdcottrell/
-      weight: 5
+      weight: 6
 
 minify:
     disableXML: true
@@ -40,7 +43,7 @@ params:
     keywords: ["Kim's Tech Blog", "kimdcottrell", "Kim D. Cottrell", "Blog", "Portfolio", "Tech", "DevOps Engineer", "Software Engineer", "Full-Stack Engineer", "Web Development", "Web Design", "Remote Work", "Coffee", "Docker", "Containerization"]
     
     env: production
-    
+
     author: kimdcottrell
     hideAuthor: true
 
@@ -95,5 +98,8 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+
+
 
 

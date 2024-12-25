@@ -1,10 +1,15 @@
 services:
   project:
     build:
-      context: ./cicd/containers
+      context: .
+      dockerfile: images/Dockerfile
     volumes:
+      - node_modules:/app/node_modules
       - .:/app
     working_dir: /app/src
     user: dev
     ports:
       - "1313:1313"
+
+volumes:
+  node_modules:
