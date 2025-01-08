@@ -1,10 +1,10 @@
 ---
 title: "The Hidden Pitfalls of Regex You Cannot Afford to Ignore"
-date: 2024-12-30T16:12:34Z
+date: 2024-01-07T19:10:46Z
 draft: false
 images: 
 - the-hidden-pitfalls-of-regex-you-cant-afford-to-ignore.gif
-tags: ['regex', 'devops']
+tags: ['regex']
 summary: "Regex. Great when it works, hilariously bad when it doesn't. A lot of regexes out in the wild don't account for international Unicode characters. It's incredibly simple to use up significant system resources if you're not careful. Lastly, it's easy to overlook the shenanigans that loosely typed languages can introduce."
 ---
 
