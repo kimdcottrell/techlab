@@ -1,6 +1,6 @@
 ---
 title: "The Hidden Pitfalls of Regex You Cannot Afford to Ignore"
-date: 2024-01-07T19:10:46Z
+date: 2025-01-07T19:10:46Z
 draft: false
 images: 
 - the-hidden-pitfalls-of-regex-you-cant-afford-to-ignore.gif
