@@ -20,9 +20,7 @@ COPY --chown=dev . /app
 
 WORKDIR /app
 
-USER dev
-
-# Install Node
+# Install Node & various node tools
 COPY --from=node --chown=dev /usr/local/bin/node /usr/local/bin/node
 COPY --from=node --chown=dev /usr/local/include/node /usr/local/include/node
 COPY --from=node --chown=dev /usr/local/lib/node_modules /usr/local/lib/node_modules
@@ -34,6 +32,8 @@ COPY --from=node --chown=dev /opt/yarn-v*/lib/* /usr/local/lib/
 RUN ln -vs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm; \
     ln -vs /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
+USER dev
+
 RUN npm install
 
 ENV PATH="${PATH}:/app/node_modules/.bin"
@@ -43,7 +43,7 @@ ENV GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 WORKDIR /app/src
 
-ENTRYPOINT ["hugo", "server", "-DEF", "--watch=true", "--bind=0.0.0.0", "--appendPort=false", "--baseURL=https://techlab.local.dev"]
+ENTRYPOINT ["hugo", "server", "--buildDrafts=false", "--watch=true", "--bind=0.0.0.0", "--appendPort=false", "--baseURL=https://techlab.local.dev"]
 
 EXPOSE 1313
 
