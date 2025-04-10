@@ -21,22 +21,22 @@ COPY --chown=dev . /app
 WORKDIR /app
 
 # Install Node & various node tools
-COPY --from=node --chown=dev /usr/local/bin/node /usr/local/bin/node
-COPY --from=node --chown=dev /usr/local/include/node /usr/local/include/node
-COPY --from=node --chown=dev /usr/local/lib/node_modules /usr/local/lib/node_modules
-# Install yarn
-COPY --from=node --chown=dev /opt/yarn-v*/bin/* /usr/local/bin/
-COPY --from=node --chown=dev /opt/yarn-v*/lib/* /usr/local/lib/
+# COPY --from=node --chown=dev /usr/local/bin/node /usr/local/bin/node
+# COPY --from=node --chown=dev /usr/local/include/node /usr/local/include/node
+# COPY --from=node --chown=dev /usr/local/lib/node_modules /usr/local/lib/node_modules
+# # Install yarn
+# COPY --from=node --chown=dev /opt/yarn-v*/bin/* /usr/local/bin/
+# COPY --from=node --chown=dev /opt/yarn-v*/lib/* /usr/local/lib/
 
-# Link npm and yarn
-RUN ln -vs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm; \
-    ln -vs /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
+# # Link npm and yarn
+# RUN ln -vs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm; \
+#     ln -vs /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 USER dev
 
-RUN npm install
+# RUN npm install
 
-ENV PATH="${PATH}:/app/node_modules/.bin"
+# ENV PATH="${PATH}:/app/node_modules/.bin"
 
 # used for config setting enableGitInfo
 ENV GIT_DISCOVERY_ACROSS_FILESYSTEM=1

@@ -64,15 +64,6 @@ params:
       - name: github
         title: See my active projects
         url: "https://github.com/kimdcottrell"
-      - name: BlueSky
-        title: Follow me on BlueSky
-        url: "https://bsky.app/profile/kimdcottrell.com"
-      - name: X
-        title: Follow me on Twitter
-        url: "https://x.com/kimdcottrell"
-      - name: Threads
-        title: Follow me on Threads
-        url: "https://www.threads.net/@kimdcottrell"
       - name: LinkedIn
         title: Follow me on LinkedIn
         url: "https://www.linkedin.com/in/kimdcottrell"
